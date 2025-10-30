@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Ahmad & Siti</title>
+
+    <!-- CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url(background.png);
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(5px);
+        }
+        .title-font {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body class="list-style-image-300 via-white to-purple-200 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Audio tersembunyi -->
+    <audio id="weddingMusic" src="Anugrah Terindah.mp3" loop></audio>
+
+    <div class="max-w-lg w-full bg-white hover:shadow-2xl hover:scale-105 rounded-[30px] overflow-hidden duration-200">
+        <div class="bg-gradient-to-r from-pink-400 to-purple-500 text-white text-center py-8 px-4">
+            <h1 class="title-font text-4xl md:text-5xl font-bold mb-2">Undangan Pernikahan</h1>
+            <p class="text-lg md:text-xl opacity-90">Kami mengundang Anda untuk merayakan hari bahagia kami</p>
+        </div>
+        
+        <!-- Konten Utama -->
+        <div class="p-6 md:p-8 text-center">
+            <!-- Nama Pasangan -->
+            <div class="mb-6">
+                <h2 class="title-font text-3xl md:text-4xl font-semibold text-gray-800 mb-2">Rafifalah & Gebiann</h2>
+                <p class="text-gray-600 text-sm md:text-base">
+                    Putra dari Bapak Rafi Ahmad & Ibu Nagita Salfina<br>
+                    Putri dari Bapak Elon Musk & Ibu Elle
+                </p>
+            </div>
+            
+            <!-- Detail Acara -->
+            <div class="bg-pink-50 rounded-lg p-4 mb-6 shadow-md">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Detail Acara</h3>
+                <p class="text-gray-700 mb-2"><strong>Tanggal:</strong> Sabtu, 15 Oktober 2090</p>
+                <p class="text-gray-700 mb-2"><strong>Waktu:</strong> 23.00 WITA - Selesai</p>
+                <p class="text-gray-700 mb-2"><strong>Lokasi:</strong> Gedung DPR</p>
+                <p class="text-gray-700"><strong>Dress Code:</strong> Batik MU</p>
+            </div>
+            
+            <!-- Pesan Pribadi -->
+            <div class="mb-6">
+                <p class="text-gray-600 italic text-sm md:text-base leading-relaxed">
+                    "Dengan segala kerendahan hati, kami memohon doa restu dari Bapak/Ibu/Saudara/i untuk kebahagiaan rumah tangga kami. Kehadiran Anda adalah hadiah terindah bagi kami."
+                </p>
+            </div>
+            
+            <!-- Tombol RSVP -->
+            <a href="mailto:ahmad@example.com?subject=RSVP%20Pernikahan%20Ahmad%20%26%20Siti" 
+               class="inline-block bg-pink-500 hover:bg-pink-600 hover:scale-105 hover:shadow-2xl active:bg-pink-400 active:duration-100 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
+                Konfirmasi Kehadiran
+            </a>
+
+            <!-- Tombol Audio -->
+            <div class="mt-6">
+                <button id="audioButton"
+                        onclick="toggleMusic()"
+                        class="bg-purple-500 hover:bg-purple-600 text-white py-2 px-6 rounded-full shadow-md transition duration-300">
+                    🔊 Putar Musik
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-100 text-center py-4 px-4">
+            <p class="text-gray-500 text-xs md:text-sm">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
+            </p>
+        </div>
+    </div>
+
+    <!-- Script Musik -->
+    <script>
+        const music = document.getElementById('weddingMusic');
+        const btn = document.getElementById('audioButton');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                music.play();
+                isPlaying = true;
+                btn.textContent = "🔈 Hentikan Musik";
+                btn.classList.replace("bg-purple-500", "bg-red-500");
+            } else {
+                music.pause();
+                isPlaying = false;
+                btn.textContent = "🔊 Putar Musik";
+                btn.classList.replace("bg-red-500", "bg-purple-500");
+            }
+        }
+    </script>
+
+</body>
+</html>
